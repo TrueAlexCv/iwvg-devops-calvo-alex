@@ -49,19 +49,22 @@ public class FractionTest {
 
     @Test
     void testAdd() {
-        assertEquals(new Fraction(2, 5).toString(),
-                fraction.add(new Fraction(2, 10)).toString());
+        Fraction sumResult = fraction.add(new Fraction(2, 10));
+        assertEquals(2, sumResult.getNumerator());
+        assertEquals(5, sumResult.getDenominator());
     }
 
     @Test
     void testMultiply() {
-        assertEquals(new Fraction(7, 15).toString(),
-                fraction.multiply(new Fraction(7, 3)).toString());
+        Fraction multiplyResult = fraction.multiply(new Fraction(7, 3));
+        assertEquals(7, multiplyResult.getNumerator());
+        assertEquals(15, multiplyResult.getDenominator());
     }
 
     @Test
     void testDivide() {
-        assertEquals(new Fraction(4, 15).toString(),
-                fraction.divide(new Fraction(6, 8)).toString());
+        Fraction divideResult = fraction.divide(new Fraction(6, 8));
+        assertEquals(4, divideResult.getNumerator());
+        assertEquals(15, divideResult.getDenominator());
     }
 }
