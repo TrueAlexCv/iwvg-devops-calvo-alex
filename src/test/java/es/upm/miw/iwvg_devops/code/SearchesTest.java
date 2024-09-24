@@ -33,4 +33,12 @@ public class SearchesTest {
         assertEquals(List.of("Oscar", "Ana", "Antonio", "Paula"),
                 searches.findUserNameBySomeImproperFraction().toList());
     }
+
+    @Test
+    void testFindFractionAdditionByUserId() {
+        Fraction expected = new Fraction(2, 1);
+        Fraction result = searches.findFractionAdditionByUserId("4");
+        assertEquals(expected.getNumerator(), result.getNumerator());
+        assertEquals(expected.getDenominator(), result.getDenominator());
+    }
 }

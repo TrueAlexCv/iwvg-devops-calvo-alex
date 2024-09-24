@@ -23,4 +23,12 @@ public class Searches {
                 .map(User::getName)
                 .distinct();
     }
+
+    public Fraction findFractionAdditionByUserId(String id) {
+        return new UsersDatabase().findAll()
+                .filter(user -> id.equals(user.getId()))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce(Fraction::add)
+                .orElse(null);
+    }
 }
