@@ -3,7 +3,7 @@ package es.upm.miw.iwvg_devops.code;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FractionTest {
     private Fraction fraction;
@@ -28,23 +28,40 @@ public class FractionTest {
     }
 
     @Test
+    void testSetNumerator() {
+        fraction.setNumerator(2);
+        assertEquals(2, fraction.getNumerator());
+    }
+
+    @Test
+    void testSetDenominator() {
+        fraction.setDenominator(10);
+        assertEquals(10, fraction.getDenominator());
+    }
+
+    @Test
     void testDecimal() {
         assertEquals(0.2, fraction.decimal());
     }
 
     @Test
     void testIsProper() {
-        assertEquals(true, fraction.isProper());
+        assertTrue(fraction.isProper());
     }
 
     @Test
     void testIsImproper() {
-        assertEquals(false, fraction.isImproper());
+        assertFalse(fraction.isImproper());
     }
 
     @Test
     void testIsEquivalent() {
-        assertEquals(true, fraction.isEquivalent(new Fraction(2, 10)));
+        assertTrue(fraction.isEquivalent(new Fraction(2, 10)));
+    }
+
+    @Test
+    void testIsEquivalentFalse() {
+        assertFalse(fraction.isEquivalent(new Fraction(3, 11)));
     }
 
     @Test
