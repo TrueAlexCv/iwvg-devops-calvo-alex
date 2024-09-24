@@ -36,6 +36,26 @@ public class UserTest {
         assertEquals(fractions, user.getFractions());
     }
 
+
+    @Test
+    void testSetName() {
+        user.setName("Alex");
+        assertEquals("Alex", user.getName());
+    }
+
+    @Test
+    void testSetFamilyName() {
+        user.setFamilyName("Calvo");
+        assertEquals("Calvo", user.getFamilyName());
+    }
+
+    @Test
+    void testSetFractions() {
+        fractions.add(new Fraction(1, 9));
+        user.setFractions(fractions);
+        assertEquals(fractions, user.getFractions());
+    }
+
     @Test
     void testAddFraction() {
         Fraction fraction = new Fraction(1, 4);
