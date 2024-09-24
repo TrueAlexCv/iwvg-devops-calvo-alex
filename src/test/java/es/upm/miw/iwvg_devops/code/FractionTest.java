@@ -60,6 +60,11 @@ public class FractionTest {
     }
 
     @Test
+    void testIsEquivalentFalse() {
+        assertFalse(fraction.isEquivalent(new Fraction(3, 11)));
+    }
+
+    @Test
     void testAdd() {
         Fraction sumResult = fraction.add(new Fraction(2, 10));
         assertEquals(2, sumResult.getNumerator());
